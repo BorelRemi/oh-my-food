@@ -1,0 +1,11 @@
+{
+  "name": "p3",
+  "version": "1.0.0",
+  "description": "p3 oh my food",
+  "main": "index.js",
+  "scripts": {
+    "sass":"sass --watch ./css/style.scss:./css/style.css"
+  },
+  "author": "Borel Rémi",
+  "license": "ISC"
+}

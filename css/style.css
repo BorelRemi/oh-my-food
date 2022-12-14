@@ -1,0 +1,23 @@
+@import url(./base/_fundation.scss);
+@import url(./utils/_variables.scss);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.header__logo {
+  width: 45%;
+  height: auto;
+}
+
+.location {
+  background-color: #d9d9d9;
+}/*# sourceMappingURL=style.css.map */
