@@ -60,10 +60,56 @@
     border: 0;
     color: white;
     background:linear-gradient($color-secondary, $color-primary);
+    box-shadow: 5px 5px 5px darken(#f5f5f5,10%);
 } 
-.fonctionnement{
-    margin: 10px;
-}
 .fonction{
-    di
+    margin: 10px;
+    &__title{
+        font-family: "roboto",'Times New Roman', Times, serif;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        font-size: 25px;
+    }
+    &__item{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+     
+    }
 }
+.sticker{
+    display: flex;
+    justify-content: start;
+    position: relative;
+    width:95%;
+    padding: 25px;
+    margin: 10px;
+    gap: 25px;
+    background-color: #f5f5f5;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px darken(#f5f5f5, 5%);
+    span{
+        position: absolute;
+        left: -7px;
+        top: 25px;
+        color:white;
+        background-color: $color-primary;
+        width: 20px;
+        height: 20px;
+        border-radius: 25px;
+        padding-left: 6px;
+        padding-top: 2px;
+    }
+    i{
+        color: grey;
+        font-size: 20px;
+        padding-left: 15px;
+    }
+    p{
+        font-family: "roboto",'Times New Roman', Times, serif;
+        font-size: 16px;
+        font-weight: bold;
+    }
+}
+
