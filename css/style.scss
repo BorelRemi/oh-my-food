@@ -81,7 +81,7 @@
 }
 .sticker{
     display: flex;
-    justify-content: start;
+    justify-content: flex-start;
     position: relative;
     width:95%;
     padding: 25px;
@@ -124,8 +124,9 @@
     background-color: $color-background;
     display: flex;
     flex-direction: column;
+    padding-bottom: 30px;
     &__title{
-        margin-left: 10px;
+        margin: 25px 0px 10px 15px;
     }
 }
 .container{
@@ -142,11 +143,12 @@
     justify-content: flex-start;
     width: 97%;
     height: 250px;
+    margin-bottom: 15px;
     border-radius: 25px;
+    background-color: white;
     @include shadow;
-    }
     &__img{
-        height: 65%;
+        height: 70%;
         img{
             object-fit: cover;
             width: 100%;
@@ -162,7 +164,46 @@
                 padding: 5px 10px 5px 10px;
                 font-size: 14px;
             }
-        }  
+        }
     }
-
-
+    &__text{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        height: 30%;
+        line-height: 25px;
+        padding-left: 15px;
+        i{
+        
+            position: absolute;
+            font-size: 25px;
+            right: 30px;
+            font-weight: lighter;
+        }
+    }
+}
+.footer{
+    background-color: lighten(black, 15%) ;
+    color: white;
+    padding: 20px;
+    &__title{
+        font-family:"shrikhand",'Times New Roman', Times, serif ;
+        font-size: 20px;
+        margin-bottom: 20px;
+        font-weight: normal;
+    }
+    ul{
+        font-family: "roboto", 'Times New Roman', Times, serif;
+        list-style-type: none;
+        li{
+            line-height: 30px;
+        }
+        i{
+            padding-right: 5px;
+        }
+    }
+    .fa-solid.fa-handshake-angle{
+        font-size: 11px;
+    }   
+}
