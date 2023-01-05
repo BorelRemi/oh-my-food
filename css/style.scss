@@ -65,6 +65,9 @@
     color: white;
     background:linear-gradient(to right bottom, $color-secondary, $color-primary);
     @include shadow;
+    width: 60%;
+    height: 50px;
+    text-align: center;
 } 
 .fonction{
     margin: 10px;
@@ -242,11 +245,12 @@
     justify-content:space-between;
     align-items: center;
     background-color: #e9e9e9;
-    border-radius: 20px 20px 0 0;
+    border-radius: 30px 30px 0 0;
     position:absolute;
     top: 319px;
     width: 100%;
-    padding: 20px 10px 20px 10px;
+    padding: 30px 10px 20px 10px;
+    z-index: 1;
     h1 {
         font-family: "shrikhand",'Times New Roman', Times, serif;
         font-weight: lighter;
@@ -258,5 +262,51 @@
     }
 }
 .menu{
-    
+    background-color: #e9e9e9;
+    font-family: "roboto",'Times New Roman', Times, serif;
+    padding: 50px 10px 10px 10px;
+    h2{
+        display: inline-block;
+        text-transform: uppercase;
+        font-weight: lighter;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        font-size: 17px;
+        border-bottom: 3px solid $color-third;
+    }
+}
+.menu-stickers{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 100%;
+    height: 70px;
+    background-color: white;
+    border-radius: 20px;
+    @include shadow;
+    padding-right: 20px;
+    padding-left: 10px;
+    margin-bottom: 15px;
+    h3{
+        font-size: 18px;
+    }
+}
+.menu-description{
+    display: flex;
+    justify-content: space-between;
+    p{
+        font-size: 15px;
+        color:lighten(black, 40%)
+    }
+    .price{
+        font-weight: bold;
+        color: black;
+    }
+}
+.order{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
