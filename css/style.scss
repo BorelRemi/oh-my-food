@@ -68,6 +68,10 @@
     width: 60%;
     height: 50px;
     text-align: center;
+    &:hover{
+        background: linear-gradient(to right bottom, #fa96df, #b581f5);
+        @include dark-shadow;
+    }
 } 
 .fonction{
     margin: 10px;
@@ -182,22 +186,33 @@
         line-height: 25px;
         padding-left: 15px;       
     } 
-    .fa-regular.fa-heart{
+    .fa-regular{
         position: absolute;
-        font-size: 25px;
-        right: 30px;
-        color: transparent;
+        font-size: 23px;
+        right: 31px;
     }
-    .fa-solid.fa-heart{
+    .fa-solid{
         position: absolute;
         right: 30px;
         font-size: 25px;
-        color: transparent; 
-        background-size: cover;
-        background-clip: text;
+        background:linear-gradient(to top, $color-secondary, $color-primary);
         -webkit-background-clip: text;
-       
-        background:linear-gradient(to right bottom, $color-secondary, $color-primary);
+        background-clip: text;
+        color: transparent;
+        opacity:0;
+        &:hover{
+            animation: heart 0.7s ease-in-out forwards;
+            -webkit-animation: heart 0.7s ease-in-out forwards;
+        }
+        @keyframes heart {
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+            
+        }   
     }
 }
 .footer{
@@ -244,10 +259,10 @@
     display: flex;
     justify-content:space-between;
     align-items: center;
-    background-color: #e9e9e9;
-    border-radius: 30px 30px 0 0;
+    background-color:$color-background;
+    border-radius: 35px 35px 0 0;
     position:absolute;
-    top: 319px;
+    top: 289px;
     width: 100%;
     padding: 30px 10px 20px 10px;
     z-index: 1;
@@ -256,24 +271,49 @@
         font-weight: lighter;
         font-size: 30px;
     }
-    i{
+    .fa-regular{
+        position: absolute;
+        font-size: 23px;
+        right: 31px;
+    }
+    .fa-solid{
+        position: absolute;
+        right: 30px;
         font-size: 25px;
-        padding-right: 10px;
+        background:linear-gradient(to top, $color-secondary, $color-primary);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        opacity:0;
+        &:hover{
+            animation: heart 0.7s ease-in-out forwards;
+            -webkit-animation: heart 0.7s ease-in-out forwards;
+        }
+        @keyframes heart {
+            from{
+                opacity: 0;
+            }
+            to{
+                opacity: 1;
+            }
+            
+        }   
     }
 }
 .menu{
-    background-color: #e9e9e9;
+    background-color: $color-background;
     font-family: "roboto",'Times New Roman', Times, serif;
-    padding: 50px 10px 10px 10px;
+    padding: 15px 10px 10px 10px;
     h2{
         display: inline-block;
         text-transform: uppercase;
         font-weight: lighter;
         margin-top: 20px;
         margin-bottom: 10px;
-        padding-bottom: 10px;
+        padding-bottom: 5px;
         font-size: 17px;
         border-bottom: 3px solid $color-third;
+        width: 12%;
     }
 }
 .menu-stickers{
