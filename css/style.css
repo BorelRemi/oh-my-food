@@ -196,6 +196,7 @@
   right: 20px;
   padding: 5px 10px 5px 10px;
   font-size: 14px;
+  z-index: 1;
 }
 .card__text {
   position: relative;
@@ -205,41 +206,6 @@
   height: 30%;
   line-height: 25px;
   padding-left: 15px;
-}
-.card .fa-regular {
-  position: absolute;
-  font-size: 23px;
-  right: 31px;
-}
-.card .fa-solid {
-  position: absolute;
-  right: 30px;
-  font-size: 25px;
-  background: linear-gradient(to top, #FF79DA, #9356DC);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  opacity: 0;
-}
-.card .fa-solid:hover {
-  animation: heart 0.7s ease-in-out forwards;
-  -webkit-animation: heart 0.7s ease-in-out forwards;
-}
-@-webkit-keyframes heart {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes heart {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 .footer {
@@ -304,12 +270,14 @@
   font-weight: lighter;
   font-size: 30px;
 }
-.resto-title .fa-regular {
+
+.fa-regular.fa-heart {
   position: absolute;
   font-size: 23px;
   right: 31px;
 }
-.resto-title .fa-solid {
+
+.fa-solid.fa-heart {
   position: absolute;
   right: 30px;
   font-size: 25px;
@@ -319,9 +287,17 @@
   color: transparent;
   opacity: 0;
 }
-.resto-title .fa-solid:hover {
+.fa-solid.fa-heart:hover {
   animation: heart 0.7s ease-in-out forwards;
   -webkit-animation: heart 0.7s ease-in-out forwards;
+}
+@-webkit-keyframes heart {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 @keyframes heart {
   from {
@@ -342,46 +318,93 @@
   text-transform: uppercase;
   font-weight: lighter;
   margin-top: 20px;
-  margin-bottom: 10px;
   padding-bottom: 5px;
   font-size: 17px;
-  border-bottom: 3px solid #99E2D0;
-  width: 12%;
+}
+
+hr {
+  border: 2px solid #99E2D0;
+  width: 40px;
+  margin-bottom: 10px;
 }
 
 .menu-stickers {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   gap: 5px;
   width: 100%;
   height: 70px;
   background-color: white;
   border-radius: 20px;
   box-shadow: 5px 5px 5px gainsboro;
-  padding-right: 20px;
   padding-left: 10px;
   margin-bottom: 15px;
+  overflow: hidden;
+}
+.menu-stickers:hover .check {
+  overflow: visible;
+  transform: translateX(0px);
+  -webkit-transform: translateX(0px);
+  width: 20%;
+  transition: 0.6s;
+}
+.menu-stickers:hover .fa-circle-check {
+  overflow: visible;
+  transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
+  transition: 0.6s;
 }
 .menu-stickers h3 {
   font-size: 18px;
 }
-
-.menu-description {
+.menu-stickers .meal {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 25px;
+  width: 100%;
+  padding-right: 10px;
+}
+.menu-stickers .meal-description {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
-.menu-description p {
+.menu-stickers .meal p {
   font-size: 15px;
   color: #666666;
+  overflow: hidden;
 }
-.menu-description .price {
+.menu-stickers .meal .price {
   font-weight: bold;
   color: black;
+}
+.menu-stickers .check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #99E2D0;
+  border-radius: 0 20px 20px 0;
+  transform-origin: right;
+  width: 0%;
+  transform: translateX(25px);
+  transition: 0.6s;
+}
+.menu-stickers .fa-circle-check {
+  color: white;
+  font-size: 25px;
+  overflow: hidden;
 }
 
 .order {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media screen and (min-width: 650px) {
+  header__title {
+    font-size: 50px;
+  }
 }/*# sourceMappingURL=style.css.map */
