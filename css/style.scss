@@ -258,7 +258,7 @@
     background-clip: text;
     color: transparent;
     opacity:0;
-    &:hover{
+    &:hover{                 /**animation du coeur**/
         animation: heart 0.7s ease-in-out forwards;
         -webkit-animation: heart 0.7s ease-in-out forwards;
     }
@@ -301,15 +301,19 @@ hr{
     @include shadow;
     padding-left: 10px;
     margin-bottom: 15px;
-    overflow: hidden;
-    &:hover .check{
+    overflow: hidden;        /** pour la transition ckeck**/
+                            /**pour l'animation apparition**/
+    opacity: 0;
+    transform: translateY(30px);
+    -webkit-transform:translateY(30px);
+    &:hover .check{            /** pour la transition ckeck**/
         overflow: visible;
         transform: translateX(0px);
         -webkit-transform: translateX(0px);
         width: 20%;
         transition: 0.6s;
     }
-    &:hover .fa-circle-check{
+    &:hover .fa-circle-check{    /** pour la transition ckeck**/
         overflow: visible;
         transform: rotate(360deg);
         -webkit-transform: rotate(360deg);
@@ -362,9 +366,38 @@ hr{
     display: flex;
     justify-content: center;
     align-items: center;
+
+} 
+
+/** animation apparition**/
+
+article:nth-child(3n) {
+    animation: apparition 0.8s ease-out forwards;
+    -webkit-animation: apparition 0.8s ease-out forwards;
+}
+article:nth-child(2n) {
+    animation: apparition 0.8s 0.4s ease-out forwards;
+    -webkit-animation: apparition 0.8s 0.4s ease-out forwards;
+}
+article:nth-child(5n) {
+    animation: apparition 0.8s 0.8s ease-out forwards;
+    -webkit-animation: apparition 0.8s 0.8s ease-out forwards;
+}
+@keyframes apparition {
+    100%{
+        opacity: 1;
+        transform: none;
+        -webkit-transform: none;
+    }
 }
 @media screen and (min-width: 650px) {
-    header__title{
+    .header__title{
         font-size:50px;
+    }
+    .searchbar{
+        width:250px;
+    }
+    .btn{
+        width: 250px;
     }
 }
