@@ -8,30 +8,60 @@
 }
 
 .loader {
-  background-color: #d5f3eb;
+  background-color: #494949;
   position: absolute;
-  z-index: 1;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-animation: out 3s ease-out forwards;
+          animation: out 3s ease-out forwards;
 }
 .loader__circle {
   width: 120px;
   height: 120px;
-  border: 15px solid transparent;
+  border: 5px solid transparent;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: lighten #99E2D0, 15%;
-  -webkit-animation: chargeur 3s linear infinite;
-          animation: chargeur 3s linear infinite;
+  -webkit-animation: chargeur 3s linear;
+          animation: chargeur 3s linear;
   border-top-color: #9356DC;
   border-bottom-color: #FF79DA;
 }
 
+/**animation pour apparition et disparition du loader**/
+@-webkit-keyframes out {
+  0% {
+    opacity: 1;
+    z-index: 2;
+  }
+  90% {
+    opacity: 0.9;
+    z-index: 2;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+@keyframes out {
+  0% {
+    opacity: 1;
+    z-index: 2;
+  }
+  90% {
+    opacity: 0.9;
+    z-index: 2;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
+/** animation du cercle du loader**/
 @-webkit-keyframes chargeur {
   0% {
-    transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(0.5);
   }
   50% {
     transform: rotate(360deg) scale(1.5);
@@ -40,10 +70,9 @@
     transform: rotate(720deg) scale(1);
   }
 }
-
 @keyframes chargeur {
   0% {
-    transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(0.5);
   }
   50% {
     transform: rotate(360deg) scale(1.5);
@@ -57,7 +86,6 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-top: 10px;
   margin-bottom: 10px;
 }
 .header__title {
@@ -401,7 +429,7 @@ hr {
   width: 20%;
   transition: 0.6s;
 }
-.menu-stickers:hover .fa-circle-check { /** pour la transition ckeck**/
+.menu-stickers:hover .fa-circle-check { /** pour la rotation ckeck**/
   overflow: visible;
   transform: rotate(360deg);
   -webkit-transform: rotate(360deg);
@@ -450,7 +478,7 @@ hr {
   border-radius: 0 20px 20px 0;
   transform-origin: right;
   width: 0%;
-  transform: translateX(25px);
+  transform: translateX(0px);
   transition: 0.6s;
 }
 
@@ -466,7 +494,7 @@ hr {
   align-items: center;
 }
 
-/** animation apparition**/
+/** animation apparition des menus**/
 article:nth-child(3n) {
   animation: apparition 0.8s ease-out forwards;
   -webkit-animation: apparition 0.8s ease-out forwards;
@@ -480,6 +508,11 @@ article:nth-child(2n) {
 article:nth-child(5n) {
   animation: apparition 0.8s 0.8s ease-out forwards;
   -webkit-animation: apparition 0.8s 0.8s ease-out forwards;
+}
+
+article:nth-child(6n) {
+  animation: apparition 0.8s 1s ease-out forwards;
+  -webkit-animation: apparition 0.8s 1s ease-out forwards;
 }
 
 @-webkit-keyframes apparition {
@@ -501,10 +534,90 @@ article:nth-child(5n) {
   .header__title {
     font-size: 50px;
   }
-  .searchbar {
+  .location .searchbar {
     width: 250px;
   }
   .btn {
     width: 250px;
+  }
+  .fonction {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+  }
+  .fonction__item {
+    width: 65%;
+  }
+  .fonction h2 {
+    font-size: 30px;
+  }
+  #restaurant {
+    align-items: center;
+  }
+  #restaurant h2 {
+    font-size: 30px;
+  }
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .container a {
+    width: 45%;
+  }
+  .card {
+    height: 320px;
+  }
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .footer__title {
+    font-size: 30px;
+  }
+  .footer ul {
+    text-align: center;
+  }
+  .resto-img {
+    height: 350px;
+  }
+  .resto-title {
+    top: 339px;
+  }
+  .menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .entrees, .plats, .desserts {
+    width: 45%;
+  }
+  .order {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 994px) {
+  .fonction__item {
+    flex-direction: row;
+    width: 100%;
+  }
+  .container {
+    flex-wrap: nowrap;
+  }
+  .card {
+    width: 90%;
+    height: 400px;
+    transform: scale(1);
+  }
+  .card:hover {
+    transition: transform 400ms ease-in;
+    transform: scale(1.1);
+    box-shadow: 5px 5px 15px #afafaf;
+  }
+  .entrees, .plats, .desserts {
+    width: 30%;
   }
 }/*# sourceMappingURL=style.css.map */
