@@ -292,17 +292,15 @@
   margin-bottom: 20px;
   font-weight: normal;
 }
-.footer ul {
+.footer p {
   font-family: "roboto", "Times New Roman", Times, serif;
   list-style-type: none;
-}
-.footer ul li {
   line-height: 30px;
 }
-.footer ul i {
+.footer p i {
   padding-right: 5px;
 }
-.footer ul a {
+.footer p a {
   text-decoration: none;
   color: white;
 }
@@ -578,7 +576,7 @@ article:nth-child(6n) {
   .footer__title {
     font-size: 30px;
   }
-  .footer ul {
+  .footer p {
     text-align: center;
   }
   .resto-img {
